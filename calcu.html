@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<title>Document</title>
+</head>
+<body>
+	<div id="principal">
+Cuenta a Pagar: <br>
+	<input type="text" id="num1" min="1" value="" onchange="multiplicar">
+	<br>
+	Porcentaje de Propina: <br>
+	<input type="float" id="num2" min="0.5" value="" onchange="multiplicar"> 
+	<br>
+	Cantidad de personas: <br>
+	<input type="text" id="num3">
+	<br>
+	<input type="button" value="Calcular" id="suma" onclick="operaciones('suma');">
+	<hr>
+	<div id="resultado"></div>
+	<div id="resultado2"></div>
+	<div id="resultado3"></div>
+</div>
+</body>
+
+<script>
+	//1. Que boton presiono 
+
+	function operaciones(operador){
+		//2 obtener los valores
+		var num1 = parseInt(document.getElementById('num1').value);
+		// num1 = parseInt(num1);
+		var num2 = parseInt(document.getElementById('num2').value);
+		var num3 = parseInt(document.getElementById('num3').value);
+
+
+		
+		//3. Hacer los calculos
+	
+		var result2;
+		if (operador == "suma") {
+			result2 = num1 * num2;
+		}
+		var result3;
+		if (operador == "suma") {
+			result3 = result2 / num3;
+		}
+
+	
+		
+		//4. Mostrar el resultado
+		document.getElementById("resultado2").innerHTML = "Su total de propina es: $" + result2;
+		document.getElementById("resultado3").innerHTML = "Su total de propina individual es: $" + result3;
+
+	}
+
+	
+	
+	
+	
+	
+</script>
+</html>
